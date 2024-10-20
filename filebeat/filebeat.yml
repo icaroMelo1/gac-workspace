@@ -1,0 +1,13 @@
+filebeat.inputs:
+  - type: log
+    paths:
+      - /var/log/containers/*.log  # Ajuste para onde seus logs estão localizados
+    fields:
+      app: your_app_name  # Adicione campos personalizados, se necessário
+
+output.file:
+  path: /var/log/filebeat  # Onde os logs serão salvos
+  filename: service-logs.log
+  rotate_every_kb: 10000  # Rotacionar a cada 10MB
+  keepfiles: 7  # Manter 7 arquivos de log
+  permissions: 0644  # Permissões do arquivo

@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "7f39ffde-a3d7-4fec-9ad8-6d697ca90f32",
+		"name": "GAC-COLLECTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30125555"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Icaro Freitas\",\n    \"email\": \"icaro.freitas@gmail.com\",\n    \"password\": \"P0w3rfullP@ssword!\",\n    \"balance\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"icaro.freitas@gmail.com\",\n    \"password\": \"P0w3rfullP@ssword!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"targetUserEmail\": \"icaro.freiitas@gmail.com\",\n    \"amountToTransfer\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Refund",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJpY2Fyby5mcmVpaXRhc0BnbWFpbC5jb20iLCJpYXQiOjE3MjkzNTg3MDgsImV4cCI6MTcyOTM2MDUwOH0.xVgH7V1sEDWqtOxesFJW4CgiqnKk2tyyKio-IlGSHlY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"originEmail\": \"icaro.freitas@gmail.com\",\n    \"targetEmail\": \"icaro.freiitas@gmail.com\",\n    \"refundReason\": \"Transferi para a pessoa errada, gostaria de realizar o reembolso.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transaction/refund",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Refund By Protocol",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refundReason\": \"Transferi para a pessoa errada, gostaria de realizar o reembolso.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transaction/refund/protocolo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"refund",
+						"protocolo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJpY2Fyby5mcmVpaXRhc0BnbWFpbC5jb20iLCJpYXQiOjE3MjkzNTg3MDgsImV4cCI6MTcyOTM2MDUwOH0.xVgH7V1sEDWqtOxesFJW4CgiqnKk2tyyKio-IlGSHlY",
+				"type": "string"
+			}
+		]
+	}
+}
